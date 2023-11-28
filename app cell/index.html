@@ -1,0 +1,71 @@
+<!-- index.html (App Shell) -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>My App</title>
+    <link rel="manifest" href="manifest.json" />
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Konten App Shell -->
+      <header>
+      <h1>App Shell Header</h1>
+    </header>
+    <aside>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <section id="home">
+        <h2>Home Page</h2>
+        <p>Welcome to the home page of My App!</p>
+      </section>
+    </main>
+    </div>
+    <div>
+      <ul>
+        <li>hgrehefgh</li>
+      </ul>
+    </div>
+    <script src="app.js"></script>
+    <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then(function (registration) {
+        console.log(
+          "Service Worker terdaftar dengan cakupan:",
+          registration.scope
+        );
+      })
+      .catch((error) => {
+        console.error("Pendaftaran Service Worker gagal:", error);
+      });
+  }
+</script>
+    <!-- mengaktifkan sevice worker
+    <script>
+    navigator.serviceWorker.getRegistration().then(function(registration) {
+      registration.activate().then(function(){
+        // service worker berhasil diaktifkan
+      }).catch(function(error) {
+        // gagal mengaktifkan service worker
+      });
+    });
+    </script> -->
+  </body>
+</html>
